@@ -8,15 +8,19 @@
 <body>
     <header>
         <ul>
-            <li><a href="/">Home</a></li>
-            {{#if session.user}}
-            <li><a href="/logout">Logout</a></li>
-            {{else}}
-            <li><a href="/login">Entrar</a></li>
-            <li><a href="/register">Registrar</a></li>
-            {{/if}}
+           {{#if session.userid}}
+    <li><a href="/logout">Logout</a></li>
+{{else}}
+    <li><a href="/login">Entrar</a></li>
+    <li><a href="/register">Registrar</a></li>
+{{/if}}
+
+
         </ul>
     </header>
     {{{body}}}
+    {{#if session.userid}}
+        <p>Logado na conta</p>
+    {{/if}}
 </body>
 </html>
